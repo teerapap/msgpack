@@ -510,6 +510,7 @@ public class Packer {
 	}
 
 	public Packer pack(Object o, Template tmpl) throws IOException {
+	  if (o == null) { return packNil(); }
 		tmpl.pack(this, o);
 		return this;
 	}

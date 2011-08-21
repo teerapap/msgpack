@@ -216,7 +216,7 @@ public class TestDirectConversion {
 			for (int j = 0; j < len; j++)
 				l.add(Integer.toString(j));
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			new Packer(out).pack(l, Templates.tList(Templates.tInteger()));
+			new Packer(out).pack(l, Templates.tList(Templates.tString()));
 			ByteArrayInputStream in = new ByteArrayInputStream(out.toByteArray());
 			Unpacker pac = new Unpacker(in);
 			int ulen = pac.unpackArray();
@@ -263,7 +263,7 @@ public class TestDirectConversion {
 			for (int j = 0; j < len; j++)
 				m.put(Integer.toString(j), j);
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			new Packer(out).pack(m, Templates.tMap(Templates.tInteger(), Templates.tInteger()));
+			new Packer(out).pack(m, Templates.tMap(Templates.tString(), Templates.tInteger()));
 			ByteArrayInputStream in = new ByteArrayInputStream(out.toByteArray());
 			Unpacker pac = new Unpacker(in);
 			int ulen = pac.unpackMap();

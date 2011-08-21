@@ -219,7 +219,7 @@ public class TestPackUnpack {
 			for (int j = 0; j < len; j++)
 				l.add(Integer.toString(j));
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			new Packer(out).pack(l,Templates.tList(Templates.tInteger()));
+			new Packer(out).pack(l,Templates.tList(Templates.tString()));
 			MessagePackObject obj = unpackOne(out);
 			List<MessagePackObject> list = obj.asList();
 			assertEquals(l.size(), list.size());
@@ -262,7 +262,7 @@ public class TestPackUnpack {
 			for (int j = 0; j < len; j++)
 				m.put(Integer.toString(j), j);
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			new Packer(out).pack(m,Templates.tMap(Templates.tInteger(), Templates.tInteger()));
+			new Packer(out).pack(m,Templates.tMap(Templates.tString(), Templates.tInteger()));
 			MessagePackObject obj = unpackOne(out);
 			Map<MessagePackObject, MessagePackObject> map = obj.asMap();
 			assertEquals(m.size(), map.size());
