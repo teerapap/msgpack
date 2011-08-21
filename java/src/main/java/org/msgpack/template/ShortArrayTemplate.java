@@ -73,8 +73,5 @@ public class ShortArrayTemplate implements Template {
 
 	static final ShortArrayTemplate instance = new ShortArrayTemplate();
 
-	static {
-		TemplateRegistry.register(short[].class, instance);
-	}
 }
 

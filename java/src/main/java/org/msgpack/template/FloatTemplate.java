@@ -45,9 +45,5 @@ public class FloatTemplate implements Template {
 
 	static final FloatTemplate instance = new FloatTemplate();
 
-	static {
-		TemplateRegistry.register(Float.class, instance);
-		TemplateRegistry.register(float.class, instance);
-	}
 }
 

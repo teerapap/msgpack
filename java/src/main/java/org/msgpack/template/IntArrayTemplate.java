@@ -73,8 +73,5 @@ public class IntArrayTemplate implements Template {
 
 	static final IntArrayTemplate instance = new IntArrayTemplate();
 
-	static {
-		TemplateRegistry.register(int[].class, instance);
-	}
 }
 

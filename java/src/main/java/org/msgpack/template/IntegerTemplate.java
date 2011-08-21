@@ -45,9 +45,5 @@ public class IntegerTemplate implements Template {
 
 	static final IntegerTemplate instance = new IntegerTemplate();
 
-	static {
-		TemplateRegistry.register(Integer.class, instance);
-		TemplateRegistry.register(int.class, instance);
-	}
 }
 

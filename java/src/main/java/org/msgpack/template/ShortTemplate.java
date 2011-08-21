@@ -45,9 +45,5 @@ public class ShortTemplate implements Template {
 
 	static final ShortTemplate instance = new ShortTemplate();
 
-	static {
-		TemplateRegistry.register(Short.class, instance);
-		TemplateRegistry.register(short.class, instance);
-	}
 }
 

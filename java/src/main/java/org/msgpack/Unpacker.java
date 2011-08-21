@@ -23,7 +23,6 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.nio.ByteBuffer;
 import java.math.BigInteger;
-import org.msgpack.template.TemplateRegistry;
 
 /**
  * Unpacker enables you to deserialize objects from stream.
@@ -585,19 +584,6 @@ public class Unpacker implements Iterable<MessagePackObject> {
 	//final public MessagePackObject unpack() throws IOException {
 	//	return unpackObject();
 	//}
-
-	final public <T> T unpack(T to) throws IOException, MessageTypeException {
-		return unpack((Class<T>)to.getClass(), to);
-	}
-
-	final public <T> T unpack(Class<T> klass) throws IOException, MessageTypeException {
-		return unpack(klass, null);
-	}
-
-	final public <T> T unpack(Class<T> klass, T to) throws IOException, MessageTypeException {
-		if(tryUnpackNull()) { return null; }
-		return (T)TemplateRegistry.lookup(klass).unpack(this, to);
-	}
 
 	final public Object unpack(Template tmpl) throws IOException, MessageTypeException {
 		return unpack(tmpl, null);

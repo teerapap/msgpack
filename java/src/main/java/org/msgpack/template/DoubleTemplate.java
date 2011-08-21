@@ -45,9 +45,5 @@ public class DoubleTemplate implements Template {
 
 	static final DoubleTemplate instance = new DoubleTemplate();
 
-	static {
-		TemplateRegistry.register(Double.class, instance);
-		TemplateRegistry.register(double.class, instance);
-	}
 }
 

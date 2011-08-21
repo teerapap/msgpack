@@ -51,7 +51,4 @@ public class DateTemplate implements Template {
 
 	static final DateTemplate instance = new DateTemplate();
 
-	static {
-		TemplateRegistry.register(Date.class, instance);
-	}
 }

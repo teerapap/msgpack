@@ -73,8 +73,5 @@ public class FloatArrayTemplate implements Template {
 
 	static final FloatArrayTemplate instance = new FloatArrayTemplate();
 
-	static {
-		TemplateRegistry.register(float[].class, instance);
-	}
 }
 

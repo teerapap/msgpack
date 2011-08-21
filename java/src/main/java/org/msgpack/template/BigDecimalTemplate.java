@@ -55,7 +55,4 @@ public class BigDecimalTemplate implements Template {
 
 	static final BigDecimalTemplate instance = new BigDecimalTemplate();
 
-	static {
-		TemplateRegistry.register(BigDecimal.class, instance);
-	}
 }

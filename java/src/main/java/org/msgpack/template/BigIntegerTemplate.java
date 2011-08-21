@@ -46,8 +46,5 @@ public class BigIntegerTemplate implements Template {
 
 	static final BigIntegerTemplate instance = new BigIntegerTemplate();
 
-	static {
-		TemplateRegistry.register(BigInteger.class, instance);
-	}
 }
 

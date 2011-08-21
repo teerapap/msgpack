@@ -73,8 +73,5 @@ public class BooleanArrayTemplate implements Template {
 
 	static final BooleanArrayTemplate instance = new BooleanArrayTemplate();
 
-	static {
-		TemplateRegistry.register(boolean[].class, instance);
-	}
 }
 

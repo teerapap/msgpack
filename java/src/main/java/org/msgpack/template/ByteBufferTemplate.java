@@ -50,7 +50,4 @@ public class ByteBufferTemplate implements Template {
 
 	static final ByteBufferTemplate instance = new ByteBufferTemplate();
 
-	static {
-		TemplateRegistry.register(ByteBuffer.class, instance);
-	}
 }

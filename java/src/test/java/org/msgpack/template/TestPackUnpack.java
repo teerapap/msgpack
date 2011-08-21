@@ -574,7 +574,7 @@ public class TestPackUnpack extends TestCase {
 		} catch (Exception e) {
 			assertTrue(e instanceof MessageTypeException);
 		}
-		packer.pack(src);
+		packer.pack(src, tmpl);
 		byte[] bytes = out.toByteArray();
 		Unpacker unpacker = new Unpacker();
 		try {
@@ -648,7 +648,7 @@ public class TestPackUnpack extends TestCase {
 		} catch (Exception e) {
 			assertTrue(e instanceof MessageTypeException);
 		}
-		packer.pack(src);
+		packer.pack(src, tmpl);
 		byte[] bytes = out.toByteArray();
 		Unpacker unpacker = new Unpacker();
 		try {
@@ -754,7 +754,7 @@ public class TestPackUnpack extends TestCase {
 		} catch (Throwable t) {
 			assertTrue(t instanceof MessageTypeException);
 		}
-		packer.pack(src);
+		packer.pack(src, tmpl);
 		byte[] bytes = out.toByteArray();
 		Unpacker unpacker = new Unpacker();
 		unpacker.wrap(bytes);
@@ -840,7 +840,7 @@ public class TestPackUnpack extends TestCase {
 		} catch (Exception e) {
 			assertTrue(e instanceof MessageTypeException);
 		}
-		packer.pack(src);
+		packer.pack(src, tmpl);
 		byte[] bytes = out.toByteArray();
 		Unpacker unpacker = new Unpacker();
 		try {

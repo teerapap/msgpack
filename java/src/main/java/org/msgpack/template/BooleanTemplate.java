@@ -45,9 +45,5 @@ public class BooleanTemplate implements Template {
 
 	static final BooleanTemplate instance = new BooleanTemplate();
 
-	static {
-		TemplateRegistry.register(Boolean.class, instance);
-		TemplateRegistry.register(boolean.class, instance);
-	}
 }
 

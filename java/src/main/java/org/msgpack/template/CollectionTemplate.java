@@ -85,9 +85,5 @@ public class CollectionTemplate implements Template {
 		return c;
 	}
 
-	static {
-		TemplateRegistry.registerGeneric(Collection.class, new GenericTemplate1(CollectionTemplate.class));
-		TemplateRegistry.register(Collection.class, new CollectionTemplate(AnyTemplate.getInstance()));
-	}
 }
 

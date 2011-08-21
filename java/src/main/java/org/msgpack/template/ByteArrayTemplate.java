@@ -45,8 +45,5 @@ public class ByteArrayTemplate implements Template {
 
 	static final ByteArrayTemplate instance = new ByteArrayTemplate();
 
-	static {
-		TemplateRegistry.register(byte[].class, instance);
-	}
 }
 

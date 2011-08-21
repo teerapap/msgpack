@@ -93,9 +93,5 @@ public class MapTemplate implements Template {
 		return map;
 	}
 
-	static {
-		TemplateRegistry.registerGeneric(Map.class, new GenericTemplate2(MapTemplate.class));
-		TemplateRegistry.register(Map.class, new MapTemplate(AnyTemplate.getInstance(), AnyTemplate.getInstance()));
-	}
 }
 

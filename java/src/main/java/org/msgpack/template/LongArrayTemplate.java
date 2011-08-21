@@ -73,8 +73,5 @@ public class LongArrayTemplate implements Template {
 
 	static final LongArrayTemplate instance = new LongArrayTemplate();
 
-	static {
-		TemplateRegistry.register(long[].class, instance);
-	}
 }
 

@@ -45,8 +45,5 @@ public class StringTemplate implements Template {
 
 	static final StringTemplate instance = new StringTemplate();
 
-	static {
-		TemplateRegistry.register(String.class, instance);
-	}
 }
 

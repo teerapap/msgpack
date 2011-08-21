@@ -19,7 +19,6 @@ package org.msgpack.type;
 
 import java.io.IOException;
 import org.msgpack.*;
-import org.msgpack.template.TemplateRegistry;
 
 public class RawTemplate implements Template {
 	static void load() { }
@@ -44,8 +43,5 @@ public class RawTemplate implements Template {
 
 	static final RawTemplate instance = new RawTemplate();
 
-	static {
-		TemplateRegistry.register(Raw.class, instance);
-	}
 }
 

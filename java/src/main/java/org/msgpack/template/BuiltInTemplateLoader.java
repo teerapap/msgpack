@@ -19,7 +19,6 @@ package org.msgpack.template;
 
 public class BuiltInTemplateLoader {
 	public static void load() {
-		AnyTemplate.getInstance();
 		BigIntegerTemplate.getInstance();
 		BigDecimalTemplate.getInstance();
 		BooleanArrayTemplate.getInstance();

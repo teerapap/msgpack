@@ -73,8 +73,5 @@ public class DoubleArrayTemplate implements Template {
 
 	static final DoubleArrayTemplate instance = new DoubleArrayTemplate();
 
-	static {
-		TemplateRegistry.register(double[].class, instance);
-	}
 }
 

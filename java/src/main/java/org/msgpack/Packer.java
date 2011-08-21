@@ -25,7 +25,6 @@ import java.util.Set;
 import java.util.Map;
 import java.util.Collection;
 import java.math.BigInteger;
-import org.msgpack.template.TemplateRegistry;
 
 /**
  * Packer enables you to serialize objects into OutputStream.
@@ -504,32 +503,9 @@ public class Packer {
 		return packRawBody(o.array(), o.arrayOffset() + o.position(), o.remaining());
 	}
 
-	public Packer pack(List o) throws IOException {
-		if(o == null) { return packNil(); }
-		packArray(o.size());
-		for(Object i : o) { pack(i); }
-		return this;
-	}
-
-	public Packer pack(Map o) throws IOException {
-		if(o == null) { return packNil(); }
-		packMap(o.size());
-		for(Map.Entry<Object,Object> e : ((Map<Object,Object>)o).entrySet()) {
-			pack(e.getKey());
-			pack(e.getValue());
-		}
-		return this;
-	}
-
 	public Packer pack(MessagePackable o) throws IOException {
 		if(o == null) { return packNil(); }
 		o.messagePack(this);
-		return this;
-	}
-
-	public Packer pack(Object o) throws IOException {
-		if(o == null) { return packNil(); }
-		TemplateRegistry.lookup(o.getClass()).pack(this, o);
 		return this;
 	}
 

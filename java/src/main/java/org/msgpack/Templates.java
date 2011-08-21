@@ -25,10 +25,6 @@ public class Templates {
 	}
 
 
-	public static final Template TAny = AnyTemplate.getInstance();
-	public static Template tAny() {
-		return TAny;
-	}
 
 
 	public static Template tList(Template elementTemplate) {
@@ -41,14 +37,6 @@ public class Templates {
 
 	public static Template tCollection(Template elementTemplate) {
 		return new CollectionTemplate(elementTemplate);
-	}
-
-	public static Template tClass(Class target) {
-		Template tmpl = TemplateRegistry.lookup(target);
-		if(tmpl == null) {
-			// FIXME
-		}
-		return tmpl;
 	}
 
 	public static final Template TByte = ByteTemplate.getInstance();

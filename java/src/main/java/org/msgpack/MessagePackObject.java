@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.Map;
 import java.math.BigInteger;
-import org.msgpack.template.TemplateRegistry;
 
 public abstract class MessagePackObject implements Cloneable, MessagePackable {
 	public boolean isNil() {
@@ -142,19 +141,5 @@ public abstract class MessagePackObject implements Cloneable, MessagePackable {
 		return (T)tmpl.convert(this, to);
 	}
 
-	public <T> T convert(Class<T> klass) throws MessageTypeException {
-		return convert(klass, null);
-	}
-
-	public <T> T convert(T to) throws MessageTypeException {
-		return convert((Class<T>)to.getClass(), to);
-	}
-
-	public <T> T convert(Class<T> klass, T to) throws MessageTypeException {
-		if(isNil()) {
-			return null;
-		}
-		return (T)convert(TemplateRegistry.lookup(klass), to);
-	}
 }
 

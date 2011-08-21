@@ -1,6 +1,8 @@
 package org.msgpack;
 
 import org.msgpack.*;
+import org.msgpack.template.ListTemplate;
+
 import java.io.*;
 import java.util.*;
 import java.math.BigInteger;
@@ -191,7 +193,7 @@ public class TestPackUnpack {
 		List<Integer> emptyList = new ArrayList<Integer>();
 		{
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			new Packer(out).pack(emptyList);
+			new Packer(out).pack(emptyList,Templates.tList(Templates.tInteger()));
 			MessagePackObject obj = unpackOne(out);
 			assertEquals(emptyList, obj.asList());
 		}
@@ -202,7 +204,7 @@ public class TestPackUnpack {
 			for (int j = 0; j < len; j++)
 				l.add(j);
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			new Packer(out).pack(l);
+			new Packer(out).pack(l,Templates.tList(Templates.tInteger()));
 			MessagePackObject obj = unpackOne(out);
 			List<MessagePackObject> list = obj.asList();
 			assertEquals(l.size(), list.size());
@@ -217,7 +219,7 @@ public class TestPackUnpack {
 			for (int j = 0; j < len; j++)
 				l.add(Integer.toString(j));
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			new Packer(out).pack(l);
+			new Packer(out).pack(l,Templates.tList(Templates.tInteger()));
 			MessagePackObject obj = unpackOne(out);
 			List<MessagePackObject> list = obj.asList();
 			assertEquals(l.size(), list.size());
@@ -232,7 +234,7 @@ public class TestPackUnpack {
 		Map<Integer, Integer> emptyMap = new HashMap<Integer, Integer>();
 		{
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			new Packer(out).pack(emptyMap);
+			new Packer(out).pack(emptyMap,Templates.tMap(Templates.tInteger(), Templates.tInteger()));
 			MessagePackObject obj = unpackOne(out);
 			assertEquals(emptyMap, obj.asMap());
 		}
@@ -243,7 +245,7 @@ public class TestPackUnpack {
 			for (int j = 0; j < len; j++)
 				m.put(j, j);
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			new Packer(out).pack(m);
+			new Packer(out).pack(m,Templates.tMap(Templates.tInteger(), Templates.tInteger()));
 			MessagePackObject obj = unpackOne(out);
 			Map<MessagePackObject, MessagePackObject> map = obj.asMap();
 			assertEquals(m.size(), map.size());
@@ -260,7 +262,7 @@ public class TestPackUnpack {
 			for (int j = 0; j < len; j++)
 				m.put(Integer.toString(j), j);
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			new Packer(out).pack(m);
+			new Packer(out).pack(m,Templates.tMap(Templates.tInteger(), Templates.tInteger()));
 			MessagePackObject obj = unpackOne(out);
 			Map<MessagePackObject, MessagePackObject> map = obj.asMap();
 			assertEquals(m.size(), map.size());

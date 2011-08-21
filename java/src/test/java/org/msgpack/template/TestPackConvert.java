@@ -554,7 +554,7 @@ public class TestPackConvert extends TestCase {
 		} catch (Exception e) {
 			assertTrue(e instanceof MessageTypeException);
 		}
-		packer.pack(src);
+		packer.pack(src, tmpl);
 		MessagePackObject obj = Util.unpackOne(out.toByteArray());
 		try {
 			tmpl.convert(obj, null);
@@ -624,7 +624,7 @@ public class TestPackConvert extends TestCase {
 		} catch (Exception e) {
 			assertTrue(e instanceof MessageTypeException);
 		}
-		packer.pack(src);
+		packer.pack(src, tmpl);
 		MessagePackObject obj = Util.unpackOne(out.toByteArray());
 		try {
 			tmpl.convert(obj, null);
@@ -729,7 +729,7 @@ public class TestPackConvert extends TestCase {
 		} catch (Throwable t) {
 			assertTrue(t instanceof MessageTypeException);
 		}
-		packer.pack(src);
+		packer.pack(src, tmpl);
 		MessagePackObject obj = Util.unpackOne(out.toByteArray());
 		try {
 			tmpl.convert(obj, null);
@@ -813,7 +813,7 @@ public class TestPackConvert extends TestCase {
 		} catch (Exception e) {
 			assertTrue(e instanceof MessageTypeException);
 		}
-		packer.pack(src);
+		packer.pack(src, tmpl);
 		MessagePackObject obj = Util.unpackOne(out.toByteArray());
 		try {
 			tmpl.convert(obj, null);

@@ -83,9 +83,5 @@ public class ListTemplate implements Template {
 		return list;
 	}
 
-	static {
-		TemplateRegistry.registerGeneric(List.class, new GenericTemplate1(ListTemplate.class));
-		TemplateRegistry.register(List.class, new ListTemplate(AnyTemplate.getInstance()));
-	}
 }
 
